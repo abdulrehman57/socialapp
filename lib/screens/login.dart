@@ -83,22 +83,34 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              Container(
-                alignment: Alignment.center,
-                height: 70.0,
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Colors.deepPurple,
-                ),
-                child: const Text(
-                  'Don\'t have an account? Sign Up',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
+              const SizedBox(
+                height: 10.0,
+              ),
+              const Text('Forgot Password ? Click Here'),
+              Expanded(
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 70.0,
+                      width: double.infinity,
+                      decoration: const BoxDecoration(
+                        color: Colors.deepPurple,
+                      ),
+                      child: const Text(
+                        'Don\'t have an account? Sign Up',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
