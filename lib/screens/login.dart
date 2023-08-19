@@ -1,3 +1,5 @@
+import 'package:ar_social_app/screens/home.dart';
+import 'package:ar_social_app/widgets/curve_clipper.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,11 +18,14 @@ class _LoginScreenState extends State<LoginScreen> {
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
-              Image(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 2.6,
-                image: const AssetImage('images/user_background.jpg'),
-                fit: BoxFit.cover,
+              ClipPath(
+                clipper: CurveClipper(),
+                child: Image(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height / 2.6,
+                  image: const AssetImage('images/user_background.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
               const Text(
                 'SOCIAL APP',
@@ -28,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.deepPurple,
                   fontSize: 30.0,
                   fontWeight: FontWeight.w600,
-                  letterSpacing: 1.0,
+                  letterSpacing: 8.0,
                 ),
               ),
               const Padding(
@@ -74,7 +79,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   fixedSize:
                       Size(MediaQuery.of(context).size.width * .65, 50.0),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const HomeScreen();
+                      },
+                    ),
+                  );
+                },
                 child: const Text(
                   'Login',
                   style: TextStyle(
